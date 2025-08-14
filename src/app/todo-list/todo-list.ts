@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'; // Importing decorator: Component
+import { FormsModule } from '@angular/forms';
 
 interface TodoItem {
   id: number;
@@ -9,7 +10,12 @@ interface TodoItem {
 // Component decorator
 @Component({
   selector: 'app-todo-list',
-  imports: [],
+  // In Angular 17+ (by default) you can create components, directives, 
+// and pipes without needing an NgModule.
+// Standalone components manage their own dependencies directly via
+// imports: [...] in the @Component decorator.
+// This reduces boilerplate and simplifies the structure.
+  imports: [FormsModule],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css'
 })

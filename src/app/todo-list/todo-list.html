@@ -1,1 +1,26 @@
-<p>todo-list works!</p>
+<div class="todo-container">
+  <h1>To-Do List</h1>
+  
+  <div class="add-task">
+    <input 
+      type="text" 
+      [(ngModel)]="newTask" 
+      placeholder="Add a new task here"
+      (keyup.enter)="addTask()"
+    >
+    <button (click)="addTask()">Add +</button>
+  </div>
+  
+  
+  <!-- This is the old way of rendering content based on a If condition:
+  <div *ngIf="todos.length === 0" class="empty-message">
+    No tasks created yet
+  </div>
+-->
+  @if(todos.length === 0) {
+    <div class="empty-message">
+        No tasks created yet
+    </div>
+  }
+
+</div>
